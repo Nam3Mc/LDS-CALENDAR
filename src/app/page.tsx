@@ -1,25 +1,40 @@
-import Home from "./home/page"
+'use client'
 
-export default function Main() {
-  return (
-    <header className="bg-blue-600 p-4 flex items-center">
-      <h1 className="text-center text-white text-xl font-bold w-1/5">LDS Calendari</h1>
-      <nav className="w-4/5 flex justify-center">
-        <ul className="flex w-full">
-          <li className="flex-1 text-center text-white transition-all duration-200 hover:text-black hover:scale-110">
-            <a href="#inicio">Inicio</a>
-          </li>
-          <li className="flex-1 text-center text-white transition-all duration-200 hover:text-black hover:scale-110">
-            <a href="#servicios">Servicios</a>
-          </li>
-          <li className="flex-1 text-center text-white transition-all duration-200 hover:text-black hover:scale-110">
-            <a href="#contacto">Contacto</a>
-          </li>
-          <li className="flex-1 text-center text-white transition-all duration-200 hover:text-black hover:scale-110">
-            <a href="#contacto">Contacto</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-  )
+// import Login from '../components/loging.tsx'
+// import Header from '../components/navbar.tsx'
+import { useState, useEffect } from "react";
+
+
+// export default function index() {
+  // return (
+    // <div>
+{/*        */}
+       {/* <Header /> */}
+      {/* <div> */}
+      {/* <Login/> */}
+      {/* </div> */}
+{/*  */}
+    {/* </div> */}
+// 
+  // )
+// }
+
+export default function test( ) {
+    const days = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']
+    const today = new Date()
+    const [ selectedDay, setSelectedDay] = useState(today)
+    const [ events, setEvents ] = useState({})
+    const hoursAM = Array.from({ length: 12 }, (_, i) => `${i + 0}:00 AM`)
+    const hoursPM = Array.from({ length: 12 }, (_, i) => `${i + 12}:00 PM`)
+
+
+
+    return (
+      <div>
+        pending
+      </div>
+
+    )
+    
+    
 }
