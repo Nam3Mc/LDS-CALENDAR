@@ -1,5 +1,5 @@
 import * as Yup from 'yup'
-import { Calling } from '../../enums/callins'
+import { Calling } from '@/enums/callins'
 
 const UserSchema = Yup.object().shape({
 
@@ -14,6 +14,7 @@ const UserSchema = Yup.object().shape({
     .min(2),
 
     email: Yup.string()
+    .optional()
     .email(),
     
     password: Yup.string()
@@ -21,9 +22,11 @@ const UserSchema = Yup.object().shape({
     .min(8)
     .max(20),
 
-    address: Yup.string(),
+    address: Yup.string()
+    .optional(),
 
     calling: Yup.string()
+    .optional()
     .oneOf(Object.values(Calling)),
 
     memberId: Yup.number()
@@ -31,9 +34,11 @@ const UserSchema = Yup.object().shape({
     .required(),
 
     image: Yup.string()
+    .optional()
     .url(),
 
     phone: Yup.number()
+    .required()
     .positive()
     .max(20)
     

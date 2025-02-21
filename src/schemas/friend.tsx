@@ -13,9 +13,10 @@ const FriendSchema = Yup.object().shape({
     .required(),
 
     address: Yup.string()
+    .optional()
     .max(200),
 
     phone: Yup.number()
     .positive()
-
+    .optional()
 })

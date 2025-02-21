@@ -6,11 +6,12 @@ const AppointmentSchema = Yup.object().shape({
 
     date: Yup.date(),
 
-    startTime: Yup.date(),
+    startTime: Yup.string(),
 
-    endTime: Yup.date(),
+    endTime: Yup.string(),
 
     description: Yup.string()
+    .optional()
     .max(200)
     .min(20),
     
@@ -23,13 +24,13 @@ const AppointmentSchema = Yup.object().shape({
     .default(Types.TEACHING),
 
     ownerID: Yup.string()
-    .uuid(),
+    .required(),
 
     userID: Yup.string()
-    .uuid(),
+    .optional(),
 
     friendID: Yup.string()
-    .uuid()
+    .optional()
 })
 
 export default AppointmentSchema

@@ -3,34 +3,80 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #eff6ff; /* Azul claro */
+  --foreground: #1e3a8a; /* Azul oscuro para buen contraste */
+  --input-bg: #ffffff; /* Fondo blanco para inputs */
+  --input-text: #1e3a8a; /* Texto oscuro en los inputs */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #e2e8f0;
+    --input-bg: #1e293b;
+    --input-text: #f8fafc;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Estilos globales para la barra de desplazamiento */
+/* Ajustes para los inputs del formulario */
+input {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid #93c5fd; /* Azul claro */
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb; /* Azul más brillante */
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+/* Botones */
+button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1e40af;
+  transform: scale(1.05);
+}
+
+a:hover {
+  color: #2563eb;
+}
+
+/* Enlaces */
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+/* Estilos de la barra de desplazamiento */
 ::-webkit-scrollbar {
-  width: 10px; /* Ancho de la barra de desplazamiento vertical */
-  height: 10px; /* Alto de la barra de desplazamiento horizontal */
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #FFD700; /* Color amarillo para la barra */
-  border-radius: 5px; /* Bordes redondeados */
+  background-color: #1e3a8a; /* Azul oscuro */
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #333; /* Color de fondo de la barra */
+  background-color: #dbeafe; /* Azul más claro */
 }

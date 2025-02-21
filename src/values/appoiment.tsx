@@ -1,14 +1,11 @@
-import { Status } from "@/enums/status";
-import { Types } from "@/enums/type";
-
 const AppointmentValues = {
 
     name: '',
     startTime: '',
     endTime: '',
     description: '',
-    status: Status.PENDING,
-    type: Types.TEACHING,
+    status: '',
+    type: '',
     ownerID: '',
     userID: '',
     friendID: ''

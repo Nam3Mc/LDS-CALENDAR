@@ -1,40 +1,43 @@
 import AppointmentSchema from '@/schemas/appointment'
 import AppointmentValues from '@/values/appoiment'
-import create from '@/requests/appointment'
+import appointmentRequests from '@/lib/appointment';
 import { Form, Formik } from 'formik'
 import TextInput from '@/utilities/textinput'
-import { Status } from '@/enums/status'
-import SelectInput from '@/utilities/dateinput'
+import SelectInput from '@/utilities/selectInput'
 import { Types } from '@/enums/type'
+import { useState } from 'react';
 
 export default function AppointmentForm() {
+
+    const [friends, setFriends] = useState([])
+    const [members, setMenbers] = useState([])
+
     
     return (
         <Formik
             initialValues={AppointmentValues}
             validationSchema={AppointmentSchema}
             onSubmit={async (values, {setSubmitting, resetForm}) => {
-                const response = create(values)
+                const response = await appointmentRequests.create(values)
                 resetForm()
             }}
         >
             {({ isSubmitting }) => 
             <Form>
                 <TextInput label='Fecha' name='date' type='date'/>
-                <TextInput label='Hora De Inicio' name='startTime' type='date'/>
-                <TextInput label='Hora De Finalizacion' name='endTime' type='date'/>
+                <TextInput label='Hora De Inicio' name='startTime' type='time'/>
+                <TextInput label='Hora De Finalizacion' name='endTime' type='time'/>
                 <TextInput label='Descripcion' name='description'/>
-                <SelectInput label='Estado' name='status' options={Object.values(Status)}/>
-                <SelectInput label='Tipo' name='type' options={Object.values(Types)}/>
+                <SelectInput label='Razonde la visita' name='type' options={Object.values(Types)}/>
                 <TextInput label='Owner ID' name='ownerID'/>
-                <TextInput label='User ID' name='userID'/>
-                <TextInput label='Friend ID' name='friendID'/>
+                <SelectInput label='Miembro Invitado' name='userID' option={Object.values(members)}/>
+                <SelectInput label='Amigo Invitado' name='friendID' option={Object.values(friends)}/>
 
                 <button 
                     type='submit'
                     className="w-full py-2 mt-4 bg-blue-500 text-white rounded hover:bg-blue-700 transition duration-300"
                 >
-                    {isSubmitting ? 'Agendando' : 'Agendado'}
+                    {isSubmitting ? 'Agendando' : 'Agendar'}
                 </button>
             </Form>
 

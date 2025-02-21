@@ -1,5 +1,5 @@
 import axios from 'axios'
-const API_URL = process.env.URL
+const API_URL = process.env.NEXT_PUBLIC_URL
 
 export default async function friendRequests( data: any ) {
     

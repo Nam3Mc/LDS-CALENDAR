@@ -1,0 +1,70 @@
+/mi-proyecto-next
+│── /public               # Archivos estáticos (imágenes, favicons, etc.)
+│── /src                  # Código fuente principal
+│   │── /app              # Directorio de enrutamiento con App Router (desde Next.js 13+)
+│   │   │── /api          # Rutas API (si se usan funciones de servidor en Next.js)
+│   │   │── /dashboard    # Página específica dentro del enrutamiento
+│   │   │   │── page.tsx  # Página principal del dashboard
+│   │   │   │── layout.tsx # Layout específico para el dashboard
+│   │   │   └── loading.tsx # Pantalla de carga para la página
+│   │   │── /[id]         # Rutas dinámicas
+│   │   │   └── page.tsx  # Página dinámica basada en el ID
+│   │   ├── /layout.tsx   # Layout global para la aplicación
+│   │   ├── /page.tsx     # Página principal del proyecto
+│   │   ├── /not-found.tsx # Página 404 personalizada
+│   │   ├── /error.tsx    # Página de manejo de errores global
+│   │── /components       # Componentes reutilizables
+│   │   │── ui            # Componentes de UI como botones, tarjetas, etc.
+│   │   │── layout        # Componentes relacionados con la estructura de la app
+│   │   │── forms         # Componentes específicos para formularios
+│   │   └── modals        # Componentes de modal reutilizables
+│   │── /hooks            # Hooks personalizados
+│   │   ├── useAuth.ts    # Hook para autenticación
+│   │   ├── useFetch.ts   # Hook para peticiones fetch
+│   │   ├── useModal.ts   # Hook para manejar modales
+│   │   └── useTheme.ts   # Hook para manejar temas
+│   │── /lib              # Utilidades y lógica compartida
+│   │   ├── auth.ts       # Funciones de autenticación
+│   │   ├── db.ts         # Configuración de la base de datos
+│   │   ├── api.ts        # Funciones para hacer peticiones a APIs
+│   │   ├── validation.ts # Esquemas de validación (ej: zod, yup)
+│   │   └── helpers.ts    # Funciones utilitarias generales
+│   │── /providers        # Providers para contexto global
+│   │   ├── AuthProvider.tsx   # Contexto de autenticación
+│   │   ├── ThemeProvider.tsx  # Contexto de temas
+│   │   └── QueryProvider.tsx  # Provider para React Query o SWR
+│   │── /store            # Estado global (Redux, Zustand, etc.)
+│   │   ├── slices        # Reducers para Redux
+│   │   ├── actions       # Acciones globales
+│   │   └── index.ts      # Configuración del store
+│   │── /styles           # Archivos de estilos
+│   │   ├── globals.css   # Estilos globales
+│   │   ├── variables.css # Variables CSS
+│   │   ├── tailwind.css  # Configuración de Tailwind
+│   │   └── themes        # Estilos por temas (dark, light)
+│   │── /types            # Definición de tipos para TypeScript
+│   │   ├── user.ts       # Tipos para usuario
+│   │   ├── api.ts        # Tipos para respuestas de API
+│   │   ├── form.ts       # Tipos para formularios
+│   │   └── index.ts      # Exportación centralizada de tipos
+│   │── /config           # Configuraciones generales
+│   │   ├── env.ts        # Variables de entorno
+│   │   ├── routes.ts     # Rutas de la aplicación
+│   │   ├── constants.ts  # Constantes globales
+│   │   ├── metadata.ts   # Configuración de metadatos para SEO
+│   │   └── axios.ts      # Configuración de Axios
+│── /.vscode              # Configuraciones del entorno de desarrollo (opcional)
+│── /tests                # Pruebas unitarias e integración
+│   ├── /unit            # Pruebas unitarias
+│   ├── /integration     # Pruebas de integración
+│   ├── setup.ts         # Configuración de testing
+│   └── mocks.ts         # Mocks para testing
+│── /e2e                 # Pruebas End-to-End (Cypress, Playwright, etc.)
+│── /scripts             # Scripts personalizados
+│── .env                 # Variables de entorno
+│── .gitignore           # Ignorar archivos en Git
+│── next.config.js       # Configuración de Next.js
+│── tailwind.config.js   # Configuración de Tailwind CSS (si aplica)
+│── tsconfig.json        # Configuración de TypeScript
+│── package.json         # Dependencias y scripts del proyecto
+│── README.md            # Documentación del proyecto

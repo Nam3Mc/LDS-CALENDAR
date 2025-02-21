@@ -1,9 +1,10 @@
 import * as Yup from 'yup'
-import { Status } from '../../enums/status'
+import { Status } from '@/enums/status'
 
 const InvitationSchema = Yup.object().shape({
 
     owner: Yup.string()
+    .required()
     .uuid(),
 
     status: Yup.string()
@@ -11,12 +12,15 @@ const InvitationSchema = Yup.object().shape({
     .default(Status.PENDING),
 
     userID: Yup.string()
+    .required()
     .uuid(),
 
     friendID: Yup.string()
+    .optional()
     .uuid(),
 
     appointmentID: Yup.string()
+    .required()
     .uuid()
 
 })
