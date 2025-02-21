@@ -2,11 +2,6 @@ import axios from 'axios'
 const API_URL = process.env.NEXT_PUBLIC_URL
 
 export default async function userRequests( data: any ) {
-    
-    const create = axios.post(`${API_URL}/apointments`, data)
-    .then((response) => {
-        return response.data
-    })
 
     const get = axios.post(`${API_URL}/apointments`)
     .then((response) => {
@@ -18,7 +13,7 @@ export default async function userRequests( data: any ) {
         return response.data
     })
 
-    const delet = axios.post(`${API_URL}/apointments`, data)
+    const del = axios.post(`${API_URL}/apointments`, data)
     .then((response) => {
         return response.data
     })

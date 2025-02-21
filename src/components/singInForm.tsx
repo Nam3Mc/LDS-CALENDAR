@@ -2,16 +2,41 @@
 
 import TextInput from "@/utilities/textinput";
 import { Formik, Form } from "formik";
-import SignInSchema from '@/schemas/singIn'
-import SingInValues from "@/values/singIn";
+import SignInSchema from '@/schemas/signIn';
+import SignInValues from "@/values/signIn";
+import authRequest from '@/lib/auth';
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+    const router = useRouter();
+
     return (
         <Formik
-            initialValues={SingInValues}
+            initialValues={SignInValues}
             validationSchema={SignInSchema}
-            onSubmit={(values) => {
-                console.log("Login data:", values);
+            onSubmit={async (values, { setSubmitting }) => {
+                try {
+                    const response = await authRequest.signIn(values);
+                    console.log("Response:", response);
+
+                    if (response) {
+                        if (typeof window !== "undefined") {
+                            localStorage.setItem('token', response.access);
+                            localStorage.setItem('User', JSON.stringify(response.userData));
+                            localStorage.setItem('Status', 'LOGGED')
+                        }
+
+                        alert("User Logged Successfully");
+                        router.push('/dashboard');
+                    } else {
+                        alert("Invalid credentials. Please try again.");
+                    }
+                } catch (error) {
+                    console.error("Login Error:", error);
+                    alert("An error occurred while signing in. Please try again.");
+                } finally {
+                    setSubmitting(false);
+                }
             }}
         >
             {({ isSubmitting }) => (

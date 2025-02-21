@@ -3,7 +3,7 @@
 import Home from "@/components/homePage";
 import wardsMapper from "@/utilities/wardsMapper";
 
-export default function Test() { 
+export default function Index() { 
     return (
         <Home/>
     );

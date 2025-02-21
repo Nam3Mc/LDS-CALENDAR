@@ -43,23 +43,23 @@ input:focus {
 }
 
 /* Botones */
-button {
-  background-color: #2563eb;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: transform 0.2s, background-color 0.2s;
-}
+/* button { */
+  /* background-color: #2563eb; */
+  /* color: white; */
+  /* padding: 10px 16px; */
+  /* border-radius: 5px; */
+  /* font-weight: bold; */
+  /* transition: transform 0.2s, background-color 0.2s; */
+/* } */
 
-button:hover {
-  background-color: #1e40af;
-  transform: scale(1.05);
-}
+/* button:hover { */
+  /* background-color: #1e40af; */
+  /* transform: scale(1.05); */
+/* } */
 
-a:hover {
-  color: #2563eb;
-}
+/* a:hover { */
+  /* color: #2563eb; */
+/* } */
 
 /* Enlaces */
 a {

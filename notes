@@ -68,3 +68,46 @@
 │── tsconfig.json        # Configuración de TypeScript
 │── package.json         # Dependencias y scripts del proyecto
 │── README.md            # Documentación del proyecto
+
+
+
+stiles 
+bg-gray-100 → Fondo gris claro
+bg-white → Fondo blanco
+bg-blue-600 → Fondo azul fuerte
+bg-gray-800 → Fondo gris oscuro
+text-gray-800 → Texto gris oscuro
+text-white → Texto blanco
+hover:text-gray-400 → Cambio de color al pasar el mouse (gris claro)
+hover:bg-blue-700 → Cambio de color al pasar el mouse (azul oscuro)
+🖋️ Tipografía
+text-2xl → Tamaño de texto grande
+text-sm → Texto pequeño
+font-bold → Texto en negrita
+font-light → Texto ligero
+text-center → Texto centrado
+📏 Espaciado y Bordes
+p-8 → Padding interno grande
+p-3 → Padding interno medio
+py-6 → Padding en eje Y
+px-10 → Padding en eje X
+mt-2 → Margen superior pequeño
+mt-4 → Margen superior mediano
+rounded-lg → Bordes redondeados grandes
+rounded-md → Bordes redondeados medianos
+border → Borde base
+border-gray-200 → Borde gris claro
+📌 Flexbox y Layout
+flex → Contenedor flexible
+items-center → Centrar elementos en eje Y
+justify-center → Centrar elementos en eje X
+justify-between → Distribuir elementos con espacio entre ellos
+space-x-6 → Espaciado horizontal entre elementos
+space-x-4 → Espaciado horizontal más pequeño
+w-full → Ancho completo
+w-96 → Ancho fijo de 96px
+🔁 Transiciones y Efectos
+transition → Suaviza cambios de estilo
+shadow-md → Sombra media
+hover:text-gray-200 → Cambio de color al pasar el mouse
+hover:bg-blue-700 → Cambio de fondo al pasar el mouse
