@@ -39,9 +39,9 @@ function LoggedBar({ setIsLogged }: { setIsLogged: (value: boolean) => void }) {
 
             <nav className="flex-1 flex justify-center">
                 <ul className="flex space-x-8 text-white font-medium">
-                    <li className="hover:scale-110 transition"><a href="/day">See my Day</a></li>
-                    <li className="hover:scale-110 transition"><a href="/week">See my Week</a></li>
-                    <li className="hover:scale-110 transition"><a href="/month">See my Month</a></li>
+                    <li className="hover:scale-110 transition"><a href="/dashboard/day">See My Day</a></li>
+                    <li className="hover:scale-110 transition"><a href="/dashboard/week">See My Week</a></li>
+                    <li className="hover:scale-110 transition"><a href="/dashboard/month">See My Month</a></li>
                 </ul>
             </nav>
 

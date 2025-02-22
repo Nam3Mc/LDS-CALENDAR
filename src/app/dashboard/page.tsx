@@ -7,28 +7,24 @@ export default function Dashboard() {
 
   return (
     <div className="bg-gray-100 min-h-screen p-6">
-      {/* Sidebar */}
       <aside
         className={`${
-          isCollapsed ? "w-16" : "w-64"
-        } h-full bg-black fixed top-0 left-0 p-4 flex flex-col gap-4 items-center transition-all duration-300`}
+          isCollapsed ? "w-10" : "w-32"
+        } h-full bg-gray-600 fixed top-16 left-0 p-4 flex flex-col gap-4 items-center transition-all duration-300`}
       >
         <button
-          className="w-10 h-10 bg-gray-700 text-white rounded-full mb-4"
+          className="w-5 h-5 bg-yellow-500 rounded-full text-center"
           onClick={() => setIsCollapsed(!isCollapsed)}
         >
           {isCollapsed ? ">" : "<"}
         </button>
-        <div className="w-10 h-10 bg-yellow-500 rounded-full"></div>
-        {!isCollapsed && <div className="w-8 h-8 bg-gray-600 rounded">Calendario</div>}
-        {!isCollapsed && <div className="w-8 h-8 bg-gray-600 rounded">Eventos</div>}
-        {!isCollapsed && <div className="w-8 h-8 bg-gray-600 rounded">Amigos</div>}
-        {!isCollapsed && <div className="w-8 h-8 bg-gray-600 rounded">Usuarios</div>}
+        {!isCollapsed && <div className="w-22 h-8 rounded text-center p-1">Calendario</div>}
+        {!isCollapsed && <div className="w-22 h-8 rounded text-center p-1">Eventos</div>}
+        {!isCollapsed && <div className="w-22 h-8 rounded text-center p-1">Amigos</div>}
+        {!isCollapsed && <div className="w-22 h-8 rounded text-center p-1">Usuarios</div>}
       </aside>
 
-      {/* Main Content */}
-      <main className={`${isCollapsed ? "ml-20" : "ml-72"} transition-all duration-300`}>
-        {/* Header */}
+      <main className={`${isCollapsed ? "ml-10" : "ml-32"} transition-all duration-300`}>
         <header className="flex justify-between items-center p-4 bg-white shadow-md rounded-lg mb-6">
           <h1 className="text-lg font-bold">Dashboard - Calendario</h1>
           <div className="flex space-x-4">
